@@ -1,26 +1,18 @@
-import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Header from './componenets/shared/Header/Header';
-import './App.css';
-import Welcome from "./routes/Welcome";
-import Application from "./routes/Application";
+import React from 'react';
 
-const _ = require('lodash');
+import GlobalStyle from './styles/global';
+import Header from './components/Header';
+import Board from './components/Board';
 
-window._ = _;
 
-class App extends Component {
-
-  render() {
-    return (
-      <div className="App">
-        <Switch>
-          <Route exact path="/" component={Welcome} />
-          <Route path="/edit/:id" component={Application} />
-        </Switch>
-      </div>
-    );
-  }
+function App() {
+  return (
+    <>
+      <Header/>
+      <Board/>
+      <GlobalStyle/>
+    </>  
+  );
 }
 
 export default App;
